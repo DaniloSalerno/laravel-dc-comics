@@ -3,7 +3,7 @@
         <div class="container">
             <div class="nav navbar-nav align-items-center">
                 <a class="nav-link py-4 {{ Route::currentRouteName() === 'home' ? 'active' : '' }}" href=" {{route('home')}} ">Home</a>
-                <a class="nav-link py-4 {{ Route::currentRouteName() === 'about' ? 'active' : '' }}" href=" {{route('about')}} ">About</a>
+                <a class="nav-link py-4 {{ Route::currentRouteName() === 'comics' ? 'active' : '' }}" href=" {{route('comics')}} ">Comics</a>
             </div>
         </div>
     </nav>
