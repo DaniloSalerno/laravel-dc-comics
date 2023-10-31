@@ -28,7 +28,7 @@
                     </tr>
                         
                     @empty
-                        
+                        No comics yet
                     @endforelse
                 </tbody>
             </table>
