@@ -1,0 +1,25 @@
+.nav {
+
+    a {
+        color: white;
+
+        &.logo {
+
+            text-decoration: none;
+            font-size: 3rem;
+        }
+
+        &.active {
+            color: black;
+            background-color: white;
+        }
+
+        &:hover {
+            color: red;
+
+            transition: all, 0.3s;
+        }
+    }
+
+
+}
