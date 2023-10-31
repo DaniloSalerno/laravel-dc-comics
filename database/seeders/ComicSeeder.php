@@ -12,6 +12,12 @@ class ComicSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $comics = config('comics');
+
+        foreach ($comics as $comic) {
+            // $... = new Comic::all();
+            // 
+            // $... = save();
+        }
     }
 }
