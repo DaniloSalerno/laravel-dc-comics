@@ -5,7 +5,7 @@
 <div class="container">
         <h1>Pagina Index di Admin</h1>
 
-        <a class="btn btn-outline-primary my-4" href="#">ADD</a>
+        <a class="btn btn-outline-primary my-4" href="{{ route('comics.create') }}">ADD</a>
 
         <div class="table-responsive">
             <table class="table table-primary">
@@ -27,6 +27,7 @@
                        {{-- ADESSO FUNZIONANO LE NUOVE IMMAGINI INSERITE MA NON QUELLE GIà PRESENTI NEL DB --}}
                         <td> <img width="100" src="{{asset('storage/' . $comic->thumb)}}" alt=""></td>
                         <td> {{$comic->series}} </td>
+                        <td> <a href=" {{route('comics.show', $comic->id)}} " class="btn btn-primary">View</a> </td>
                     </tr>
                         
                     @empty
