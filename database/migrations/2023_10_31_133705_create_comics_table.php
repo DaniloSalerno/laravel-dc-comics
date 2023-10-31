@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title', 50);
             $table->text('description');
-            $table->float('price', 8, 2)->unsigned();
-            $table->string('series', 30);
+            $table->string('price', 11);
+            $table->string('series', 100);
             $table->date('sale_date');
             $table->string('artists', 255);
             $table->string('writers', 255);
