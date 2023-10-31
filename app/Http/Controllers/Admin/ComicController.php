@@ -30,7 +30,19 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $image_path = Storage::put('comic_image', $request->image);
+        //dd($request->all());
+        if ($request->has('image')) {
+
+            $image_path = Storage::put('comic_image', $request->image);
+        }
+
+        $comic = new Comic();
+        $comic->title = $request->title;
+        $comic->thumb = $image_path;
+        $comic->series = $request->series;
+        $comic->save();
+
+        return to_route('comics.index');
     }
 
     /**
@@ -38,7 +50,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        dd($comic);
     }
 
     /**

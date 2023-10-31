@@ -23,7 +23,9 @@
                     <tr class="">
                         <td scope="row"> {{$comic->id}} </td>
                         <td> {{$comic->title}} </td>
-                        <td> <img width="100" src="{{$comic->thumb}}" alt=""></td>
+                       {{--  <td> <img width="100" src="{{$comic->thumb}}" alt=""></td> --}}
+                       {{-- ADESSO FUNZIONANO LE NUOVE IMMAGINI INSERITE MA NON QUELLE GIà PRESENTI NEL DB --}}
+                        <td> <img width="100" src="{{asset('storage/' . $comic->thumb)}}" alt=""></td>
                         <td> {{$comic->series}} </td>
                     </tr>
                         
