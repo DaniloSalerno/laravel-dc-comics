@@ -15,8 +15,8 @@ class PageController extends Controller
     }
 
     public function comics()
-    {
-        $comics = Comic::all();
+    {   //$comics = Comic::orderBy('id');
+        $comics = Comic::orderby('id')->paginate(10);
         return view('pages.comics', ['comics' => $comics]);
     }
 }

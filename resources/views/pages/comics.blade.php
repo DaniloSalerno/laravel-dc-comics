@@ -11,7 +11,11 @@
                 <div class="col">
                     <div class="card h-100">
 
-                        <img width="100" src="{{asset('storage/' . $comic->thumb)}}" alt="">
+                        @if (str_contains($comic->thumb, 'http'))
+                            <img class=" img-fluid" src="{{ $comic->thumb }}">
+                        @else
+                            <img class=" img-fluid" src="{{asset('storage/' . $comic->thumb)}}" alt="">
+                        @endif
 
                         <div class="card-body">
                             <div><strong>Title:</strong> {{$comic->title}}</div>
@@ -19,7 +23,7 @@
                             <div><strong>Series:</strong> {{$comic->series}}</div>
                             <div><strong>Sale date:</strong> {{$comic->sale_date}}</div>
                             <div><strong>Artists:</strong> {{$comic->artists}}</div>
-                            <div><strong>Artists:</strong> {{$comic->writers}}</div>
+                            <div><strong>Writers:</strong> {{$comic->writers}}</div>
 
                         </div>
                         {{-- /.card-body --}}
@@ -33,6 +37,7 @@
                 @endforelse
         </div>
         {{-- /.row --}}
+        <div class="pt-4"> {{$comics->links('pagination::bootstrap-5')}} </div>
 
     </div>
     {{-- /.container --}}

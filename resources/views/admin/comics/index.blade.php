@@ -6,6 +6,7 @@
         <h1>Pagina Index di Admin</h1>
 
         <a class="btn btn-outline-primary my-4" href="{{ route('comics.create') }}">ADD</a>
+        <div class="pt-4"> {{$comics->links('pagination::bootstrap-5')}} </div>
 
         <div class="table-responsive">
             <table class="table table-primary">
@@ -23,9 +24,15 @@
                     <tr class="">
                         <td scope="row"> {{$comic->id}} </td>
                         <td> {{$comic->title}} </td>
-                       {{--  <td> <img width="100" src="{{$comic->thumb}}" alt=""></td> --}}
-                       {{-- ADESSO FUNZIONANO LE NUOVE IMMAGINI INSERITE MA NON QUELLE GIà PRESENTI NEL DB --}}
-                        <td> <img width="100" src="{{asset('storage/' . $comic->thumb)}}" alt=""></td>
+
+                        <td>
+                            @if (str_contains($comic->thumb, 'http'))
+                                <img width="100" class=" img-fluid" src="{{ $comic->thumb }}">
+                            @else
+                                <img width="100" class=" img-fluid" src="{{asset('storage/' . $comic->thumb)}}" alt="">
+                            @endif
+                        </td>
+
                         <td> {{$comic->series}} </td>
                         <td> <a href=" {{route('comics.show', $comic->id)}} " class="btn btn-primary">View</a> </td>
                     </tr>
@@ -35,6 +42,7 @@
                     @endforelse
                 </tbody>
             </table>
+            <div class="pt-4"> {{$comics->links('pagination::bootstrap-5')}} </div>
         </div>
     </div>
     
