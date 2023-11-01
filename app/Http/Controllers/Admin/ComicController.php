@@ -32,6 +32,7 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        $image_path = null;
         if ($request->has('image')) {
 
             $image_path = Storage::put('comic_image', $request->image);
