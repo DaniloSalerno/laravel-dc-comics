@@ -32,6 +32,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>
+            <a class="text-decoration-none btn btn-primary" href="{{ route('comics.index') }}">Torna alla lista</a>
     
         </form>
     </div>

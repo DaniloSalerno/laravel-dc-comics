@@ -1,4 +1,4 @@
-.nav {
+/* .nav {
 
     a {
         color: white;
@@ -22,4 +22,61 @@
     }
 
 
+} */
+
+@use './variables' as *;
+
+header {
+
+    font-weight: 700;
+
+    .bar {
+        background-color: $dc_primary;
+        padding: 0.3rem;
+    }
+
+    .header_wrapper {
+        height: 100%;
+
+
+        li {
+
+            padding: 2rem 0;
+            border-bottom: 3px solid transparent;
+
+            a {
+                text-transform: uppercase;
+
+            }
+
+            &.active {
+                border-bottom: 3px solid $dc_primary;
+
+                a {
+                    color: $dc_primary;
+
+                }
+            }
+
+            span.active {
+                color: $dc_primary;
+
+            }
+        }
+
+        form {
+            .search_wrapper {
+
+                input {
+                    width: 120px;
+                    outline: none;
+                    font-weight: 700;
+
+                }
+
+                border-bottom: 2px solid $dc_primary;
+
+            }
+        }
+    }
 }

@@ -1,0 +1,64 @@
+@use './variables' as *;
+
+.footer_top {
+
+    height: 400px;
+    background-image: url('../img/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+
+    h3 {
+
+        text-transform: uppercase;
+        color: white;
+        font-weight: bolder;
+        font-size: 1.25rem;
+
+    }
+
+    a {
+
+        color: gray;
+        text-decoration: none;
+
+        &:hover {
+
+            color: white;
+
+        }
+    }
+
+    .logo {
+
+        background-image: url('../img/dc-logo-bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+}
+
+.footer_bottom {
+
+    height: 110px;
+    background-color: $dc_dark;
+
+    h3 {
+
+        text-transform: uppercase;
+        color: $dc_primary;
+        font-weight: bold;
+        font-size: 1.25rem;
+        padding-top: 0.5rem;
+
+    }
+
+    #socials a img:hover {
+        cursor: pointer;
+
+        filter: brightness(3);
+
+        transition: filter, 0.5s;
+    }
+
+}

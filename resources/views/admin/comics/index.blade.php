@@ -5,7 +5,7 @@
 <div class="container">
         <h1>Pagina Index di Admin</h1>
 
-        <a class="btn btn-outline-primary my-4" href="{{ route('comics.create') }}">ADD</a>
+        <a class="btn btn-primary my-4" href="{{ route('comics.create') }}">ADD</a>
         <div class="pt-4"> {{$comics->links('pagination::bootstrap-5')}} </div>
 
         <div class="table-responsive">

@@ -20,6 +20,10 @@
             <div><strong>Title:</strong> {{$comic->title}}</div>
             <div><strong>Artists:</strong> {{$comic->artists}}</div>
             <div><strong>Writers:</strong> {{$comic->writers}}</div>
+
+            <div class="d-flex justify-content-center">
+                <a class="text-decoration-none btn btn-primary" href="{{ route('comics.index') }}">Torna alla lista</a>
+            </div>
         </div>
     </div>
 @endsection
