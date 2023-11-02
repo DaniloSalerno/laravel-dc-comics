@@ -62,7 +62,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
@@ -70,7 +70,23 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        //dd($request->all());
+        $data = $request->all();
+
+        if ($request->has('image') && $comic->thumb) {
+
+            Storage::delete($comic->thumb);
+
+            $newImageFile = $request->image;
+
+            $path = Storage::put('comic_image', $newImageFile);
+
+            $data['image'] = $path;
+        }
+
+        $comic->update($data);
+
+        return to_route('comics.show', $comic);
     }
 
     /**
