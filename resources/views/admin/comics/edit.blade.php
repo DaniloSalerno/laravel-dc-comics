@@ -22,8 +22,8 @@
             
             <div class="mb-3 d-flex gap-5">
                 <div>
-                    <label for="image" class="form-label">Image</label>
-                    <input type="file" name="image" id="image" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label for="thumb" class="form-label">Image</label>
+                    <input type="file" name="thumb" id="thumb" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="imageHelper" class="text-muted">Upload an image</small>
                 </div>
                 <div>

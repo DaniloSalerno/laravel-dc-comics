@@ -33,9 +33,9 @@ class ComicController extends Controller
     {
         //dd($request->all());
         $image_path = null;
-        if ($request->has('image')) {
+        if ($request->has('thumb')) {
 
-            $image_path = Storage::put('comic_image', $request->image);
+            $image_path = Storage::put('comic_image', $request->thumb);
         }
 
         $comic = new Comic();
@@ -70,20 +70,27 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        //dd($comic);
+        //dd($comic->thumb);
         //dd($request->all());
         $data = $request->all();
 
-        if ($request->has('image') && $comic->thumb) {
+        //dd($data);
+        if ($request->has('thumb') && $comic->thumb) {
 
             Storage::delete($comic->thumb);
 
-            $newImageFile = $request->image;
+            $newImageFile = $request->thumb;
 
+            //dd($newImageFile);
             $path = Storage::put('comic_image', $newImageFile);
-
-            $data['image'] = $path;
+            //dd($path);
+            //dd($data['image']);
+            $data['thumb'] = $path;
+            //dd('sono dentro');
         }
 
+        //dd($comic);
         $comic->update($data);
 
         return to_route('comics.show', $comic);
