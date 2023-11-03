@@ -13,9 +13,9 @@
             
         @endif
 
-        <h1>Pagina Index di Admin</h1>
+        <h1>Comics Table</h1>
 
-        <a class="btn btn-primary my-4" href="{{ route('comics.create') }}">ADD</a>
+        <a class="btn btn-primary my-4" href="{{ route('comics.create') }}">Add New Comic</a>
         <div class="pt-4"> {{$comics->links('pagination::bootstrap-5')}} </div>
 
         <div class="table-responsive">
