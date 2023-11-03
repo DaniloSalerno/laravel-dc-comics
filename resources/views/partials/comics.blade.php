@@ -5,7 +5,7 @@
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 py-4">
         @forelse ($comics as $comic)
         <div class="col">
-            <div class="card border-0">
+            <a href="{{route('show', $comic)}}" class="card border-0">
                 @if (str_contains($comic->thumb, 'http'))
                 <img class=" img-fluid" src="{{ $comic->thumb }}">
                  @else
@@ -14,7 +14,7 @@
                 <div class="card-body ps-0">
                     <h6 class="card-title text-white text-uppercase"> {{$comic->title}} </h6>
                 </div>
-            </div>
+            </a>
         </div>
         @empty
         <div class="col">
