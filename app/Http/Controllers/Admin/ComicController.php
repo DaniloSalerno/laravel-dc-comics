@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
+use function PHPUnit\Framework\isNull;
+
 class ComicController extends Controller
 {
     /**
@@ -44,7 +46,7 @@ class ComicController extends Controller
         $comic->series = $request->series;
         $comic->save();
 
-        return to_route('comics.index');
+        return to_route('comics.index')->with('message', 'Welldone! Comic created successfully');
     }
 
     /**
@@ -93,7 +95,7 @@ class ComicController extends Controller
         //dd($comic);
         $comic->update($data);
 
-        return to_route('comics.show', $comic);
+        return to_route('comics.index')->with('message', 'Welldone! Comic updated successfully');
     }
 
     /**
@@ -101,6 +103,11 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        if (!isNull($comic->thumb)) {
+            Storage::delete($comic->thumb);
+        }
+        $comic->delete();
+
+        return to_route('comics.index')->with('message', 'Welldone! Comic deleted successfully');
     }
 }
