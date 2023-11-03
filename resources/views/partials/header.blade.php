@@ -96,7 +96,9 @@
                     </li>
 
                     <li  class="nav-item h-100 d-flex align-items-center {{ Route::currentRouteName() === 'comics.index' ? 'active' : '' }}">
+
                         <a class="nav-link " href="  {{ route('comics.index') }} ">Admin</a>
+                        
                     </li>
                 </ul>
 

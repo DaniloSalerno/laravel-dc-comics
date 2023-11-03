@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+<<<<<<< HEAD
 @section('content')
     <div class="p-5 text-white text-center col-6 m-auto">
         <div>
@@ -25,5 +26,12 @@
                 <a class="text-decoration-none btn btn-primary" href="{{ route('comics') }}">Torna alla lista</a>
             </div>
         </div>
+=======
+
+
+@section('content')
+    <div class="text-white p-4">
+        {{$comic->id}}
+>>>>>>> 394cd328d63fee3083ab2dff3c18d394dea9fb2a
     </div>
 @endsection
