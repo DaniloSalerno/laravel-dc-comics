@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
     <div class="p-5 text-white text-center col-6 m-auto">
@@ -22,7 +22,7 @@
             <div><strong>Writers:</strong> {{$comic->writers}}</div>
 
             <div class="d-flex justify-content-center">
-                <a class="text-decoration-none btn btn-primary" href="{{ route('comics.index') }}">Torna alla lista</a>
+                <a class="text-decoration-none btn btn-primary" href="{{ route('comics') }}">Torna alla lista</a>
             </div>
         </div>
     </div>
