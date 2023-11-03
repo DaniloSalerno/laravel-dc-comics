@@ -1,4 +1,6 @@
+@use './variables' as *;
+
 main {
     min-height: 90vh; //to delete after add the content
-    background-color: grey;
+    background-color: $dc_darker;
 }
