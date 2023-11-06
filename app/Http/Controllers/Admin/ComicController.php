@@ -147,4 +147,11 @@ class ComicController extends Controller
 
         return to_route('comics.index')->with('message', 'Welldone! Comic deleted successfully');
     }
+
+
+
+    public function deleted_comics()
+    {
+        return view('admin.comics.cestino', ['deleted_comics' => Comic::onlyTrashed()->get()]);
+    }
 }
