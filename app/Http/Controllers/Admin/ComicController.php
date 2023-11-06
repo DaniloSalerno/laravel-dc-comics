@@ -18,9 +18,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //$deleted_comics = Comic::onlyTrashed()->get();
+        $deleted_comics = Comic::onlyTrashed()->get();
         $comics = Comic::orderBy('id')->paginate(10);
-        return view('admin.comics.index', compact('comics'));
+        return view('admin.comics.index', compact('comics', 'deleted_comics'));
     }
 
     /**
