@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="create py-5">
+<section class="create py-5 bg-white">
     <div class="container">
         <form action=" {{route('comics.update', $comic)}}" method="POST" enctype="multipart/form-data">
             @csrf
