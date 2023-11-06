@@ -1,13 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container py-5">
+<div class="container">
 
     @if (session('message'))
         <div class="alert alert-success" role="alert">
             <strong>Success!</strong> {{ session('message') }}
         </div>
     @endif
+
+    <h1 class="text-white py-4">Cestino</h1>
 
     <table class="table table-primary table-hover table-striped table-bordered">
     
@@ -17,6 +19,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Image</th>
                 <th scope="col">Series</th>
+                <th scope="col">Deleted time</th>
                 <th>Options</th>
             </tr>
         </thead>
@@ -38,9 +41,13 @@
                 </td>
     
                 <td> {{$deleted->series}} </td>
+
+                <td> {{$deleted->deleted_at}} </td>
+
     
                 <td>
                     {{-- bottoni per ripristino e cancellazione --}}
+                    view/restore/delete
                 </td>
     
             </tr>
