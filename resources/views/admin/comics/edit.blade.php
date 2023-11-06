@@ -30,7 +30,7 @@
 
             <div class="mb-3">
                 <label for="series" class="form-label">Series</label>
-                <input type="text" name="series" id="series" class="form-control @error('series') is-invalid @enderror" placeholder="" aria-describedby="helpId" value=" {{old('title', $comic->series)}} " required>
+                <input type="text" name="series" id="series" class="form-control @error('series') is-invalid @enderror" placeholder="" aria-describedby="helpId" value=" {{old('series', $comic->series)}} " required>
                 <small id="seriesHelper" class="text-muted">Type a series</small>
                 @error('series')
                     <div class="text-danger"> {{$message}} </div>
