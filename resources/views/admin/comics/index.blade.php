@@ -17,7 +17,7 @@
 
         <div class="d-flex justify-between my-4">
             <a class="btn btn-primary" href="{{ route('comics.create') }}">Add New Comic</a>
-            {{-- <a class="btn btn-danger" href="{{ route('deleted_comics') }}">Cestino</a> --}}
+            {{-- <a class="btn btn-danger" href="{{ route('comics.cestino') }}">Cestino</a> --}}
         </div>
 
         <div class="pt-4"> {{$comics->links('pagination::bootstrap-5')}} </div>

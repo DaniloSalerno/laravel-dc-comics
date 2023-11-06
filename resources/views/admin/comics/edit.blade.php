@@ -21,7 +21,7 @@
     
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="" aria-describedby="helpId" value=" {{old('title', $comic->title)}} ">
+                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="" aria-describedby="helpId" value=" {{old('title', $comic->title)}} " required>
                 <small id="titleHelper" class="text-muted">Type a title</small>
                 @error('title')
                     <div class="text-danger"> {{$message}} </div>
@@ -30,7 +30,7 @@
 
             <div class="mb-3">
                 <label for="series" class="form-label">Series</label>
-                <input type="text" name="series" id="series" class="form-control @error('series') is-invalid @enderror" placeholder="" aria-describedby="helpId" value=" {{old('title', $comic->series)}} ">
+                <input type="text" name="series" id="series" class="form-control @error('series') is-invalid @enderror" placeholder="" aria-describedby="helpId" value=" {{old('title', $comic->series)}} " required>
                 <small id="seriesHelper" class="text-muted">Type a series</small>
                 @error('series')
                     <div class="text-danger"> {{$message}} </div>
@@ -40,7 +40,7 @@
             <div class="mb-3 d-flex gap-5">
                 <div>
                     <label for="thumb" class="form-label">New Image</label>
-                    <input type="file" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="" aria-describedby="helpId">
+                    <input type="file" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="" aria-describedby="helpId" required>
                     <small id="imageHelper" class="text-muted">Upload an image</small>
                     @error('thumb')
                         <div class="text-danger"> {{$message}} </div>

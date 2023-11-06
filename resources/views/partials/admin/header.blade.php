@@ -23,7 +23,7 @@
 
                     <li class="nav-item h-100 d-flex align-items-center {{ Route::currentRouteName() === 'comics.index' ? 'active' : '' }}">
 
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <a class="nav-link" href="{{route('comics.index')}}">Dashboard</a>
 
                     </li>
                     
