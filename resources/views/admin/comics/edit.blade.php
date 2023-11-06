@@ -39,7 +39,7 @@
             
             <div class="mb-3 d-flex gap-5">
                 <div>
-                    <label for="thumb" class="form-label">Image</label>
+                    <label for="thumb" class="form-label">New Image</label>
                     <input type="file" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="" aria-describedby="helpId">
                     <small id="imageHelper" class="text-muted">Upload an image</small>
                     @error('thumb')
@@ -48,6 +48,7 @@
                 </div>
                 <div>
                     @if(!in_array('The thumb field is required.',$errors->all()))
+                        <div class="text-center">Old image</div>
                         <img width="300" src=" {{asset('storage/' . $comic->thumb)}} " alt="">
                     @endif
                 </div>

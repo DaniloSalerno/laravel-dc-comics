@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use Illuminate\Support\Facades\Storage;
 
 use function PHPUnit\Framework\isNull;
@@ -31,7 +33,7 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
         //dd($request->all());
         /* $image_path = null;
@@ -46,11 +48,13 @@ class ComicController extends Controller
         $comic->series = $request->series;
         $comic->save();
  */
-        $val_data = $request->validate([
+        /*  $val_data = $request->validate([
             'title' => 'bail|required|min:5|max:100',
             'series' => 'bail|required|min:10|max:100',
             'thumb' => 'required|image'
-        ]);
+        ]); */
+
+        $val_data = $request->validated();
 
         if ($request->has('thumb')) {
             $file_path =  Storage::put('products_image', $request->thumb);
@@ -83,7 +87,7 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
         //dd($comic);
         //dd($comic->thumb);
@@ -108,11 +112,13 @@ class ComicController extends Controller
         //dd($comic);
         $comic->update($data); */
 
-        $val_data = $request->validate([
+        /* $val_data = $request->validate([
             'title' => 'bail|required|min:5|max:100',
             'series' => 'bail|required|min:10|max:100',
             'thumb' => 'required|image'
-        ]);
+        ]); */
+
+        $val_data = $request->validated();
 
         if ($request->has('thumb') && $comic->thumb) {
 
