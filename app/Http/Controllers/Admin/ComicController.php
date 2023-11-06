@@ -88,7 +88,7 @@ class ComicController extends Controller
         //dd($comic);
         //dd($comic->thumb);
         //dd($request->all());
-        $data = $request->all();
+        /* $data = $request->all();
 
         //dd($data);
         if ($request->has('thumb') && $comic->thumb) {
@@ -106,7 +106,24 @@ class ComicController extends Controller
         }
 
         //dd($comic);
-        $comic->update($data);
+        $comic->update($data); */
+
+        $val_data = $request->validate([
+            'title' => 'bail|required|min:5|max:100',
+            'series' => 'bail|required|min:10|max:100',
+            'thumb' => 'required|image'
+        ]);
+
+        if ($request->has('thumb') && $comic->thumb) {
+
+            Storage::delete($comic->thumb);
+
+            $newImageFile = $request->thumb;
+            $file_path = Storage::put('comic_image', $newImageFile);
+            $val_data['thumb'] = $file_path;
+        }
+
+        $comic->update($val_data);
 
         return to_route('comics.index')->with('message', 'Welldone! Comic updated successfully');
     }
