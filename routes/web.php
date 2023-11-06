@@ -20,5 +20,6 @@ Route::get('/comics', [PageController::class, 'comics'])->name('comics');
 Route::get('/show/{comic} ', [PageController::class, 'show'])->name('show');
 
 Route::get('/admin/comics/cestino', [ComicController::class, 'deleted_comics'])->name('cestino');
+//creare rotte per restore e forceDelete
 
 Route::resource('admin/comics', ComicController::class);

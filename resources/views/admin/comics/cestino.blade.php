@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container py-5">
+
+    @if (session('message'))
+        <div class="alert alert-success" role="alert">
+            <strong>Success!</strong> {{ session('message') }}
+        </div>
+    @endif
+
     <table class="table table-primary table-hover table-striped table-bordered">
     
         <thead>
@@ -33,12 +40,14 @@
                 <td> {{$deleted->series}} </td>
     
                 <td>
-                    <a href="## " class="btn btn-success">Ripristina</a> 
+                    {{-- bottoni per ripristino e cancellazione --}}
                 </td>
     
             </tr>
             @empty
-                
+                <tr>
+                    <td>Nessun Elemento nel cestino</td>
+                </tr>
             @endforelse
         </tbody>
     </table>

@@ -154,4 +154,6 @@ class ComicController extends Controller
     {
         return view('admin.comics.cestino', ['deleted_comics' => Comic::onlyTrashed()->get()]);
     }
+
+    //aggiungere funzioni per restore e forceDelete
 }
